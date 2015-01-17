@@ -1,3 +1,97 @@
 \begin{subsection}{Entropy of Quantum States}
-TODO
+Recall that the Shannon Entropy measures the uncertainty of a classical random variable, we should take the expectation of the self information over all possible realizations:
+\begin{equation*}
+H(X) = -\sum_i p_i \log p_i.
+\end{equation*}
+The Von Neumann Entropy generalize the definition of Shannon entropy to quantum states, whose uncertainty can be measured by its density matrix:
+\begin{equation*}
+H(\rho) \equiv - \text{Tr} \{ \rho \log \rho \} = -\sum_{i} \lambda_i \log \lambda_i.
+\end{equation*}
+Note that the von Neumann entropy of a density matrix is the Shannon entropy of its eigenvalues. Therefore, the von Neumann entropy shares many properties with the Shannon entropy.
+\end{subsection}
+
+\begin{subsection}{Properties of  Quantum Entropy}
+In this section, we discuss several mathematical properties of the quantum entropy: positivity, its minimum value, its maximum value, its invariance under unitaries, and concavity.
+
+\textbf{Property 1 (Positivity)} The von Neumann entropy $H(\rho)$ is non-negative for any density operator $\rho$:
+\begin{align*}
+H(\rho) \geq 0.
+\end{align*}
+\textit{Proof.} We observe that von Neumann entropy can be expressed as  $-\sum_{i} \lambda_i \log \lambda_i$. Due to the log function always larger than 0, the von Neumann entropy is also larger than 0.
+
+\textbf{Property 2 (Minimum Value)}
+The minimum value of von Neumann entropy is zero, and we can achieve it as the density operator is a pure state; that is, the quantum state is deterministic. \\
+\textit{Proof.} The minimum value occurs when a density operator are distributed with all the mass on one value and zero on the others, so that the density operator is rank one and corresponds to a pure state.
+
+\textbf{Property 3 (Maximum Value)}
+The maximum value of von Neumann entropy is $logD$, where $D$ is the dimension of the system. \\
+\textit{Proof.} Similarly to classical case, von Neumann entropy is maximum iff eigen value $\lambda$ is uniformly distributed and it leads entropy to be:
+\begin{align*}
+H(\rho) \equiv -\sum_{i} \lambda_i \log \lambda_i = D\frac{1}{D} log(\frac{1}{D})=logD.
+\end{align*}
+
+\textbf{Property 4 (Concavity)}
+The von Neumann entropy is concave in the density matrix, $H(\rho) \geq \sum_x p_X(x) H(\rho_x)$, where $\rho = \sum_x p_X(x)\rho_x$. \\
+\textit{Proof.} Define a joint state of $AB$ by:
+\begin{align*}
+\rho^{AB} \equiv \sum_i p_i \rho_i \otimes |i\rangle \langle i|.
+\end{align*}
+Note that for theensity matrix $\rho^{AB}$ we have:
+\begin{align*}
+H(A)=H(\sum_i p_i \rho_i) \\
+H(B)=H(\sum_i p_i |i \rangle \langle i|)=H(p_i) \\
+H(A,B)=H(p_i)+\sum_i p_i H(\rho_i). \\
+\end{align*}
+Applying the subadditivity inequality $H(A,B) \leq H(A)+H(B)$we obtain
+\begin{align*}
+\sum_i p_i H(\rho_i) \leq H(\sum_i p_i \rho_i),
+\end{align*}
+which is concavity.
+\end{subsection}
+
+\begin{subsection}{Conditional von Nuemann entropy}
+Unlike the classical conditional entropy, the quantum entropy can be negative. This is true even the von Nuemann entropy of single variable is never negative. \\
+For example:
+Entangled Particals:
+\begin{align*}
+& |\psi_{AB} \rangle = \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle) \\
+& \rho_{AB}= |\psi_{AB} \rangle \langle \psi_{AB}| \\
+& \rho_A=\frac{1}{2}(|0\rangle \langle 0| + |1\rangle \langle 1|) \\
+& H(A)=1=H(B), & &I(A;B)=2,  \\
+& H(AB)=0, & &H(A|B)=-1 
+\end{align*}
+The informational statement is tha we can sometimes be more certain about the joint state of a quantum system than we can be about any one of its individual parts, and this is the reason that conditional  quantum entropy can be negative.
+\end{subsection}
+
+\begin{subsection}{Strong subadditivity}
+For any quantum systems $A, B, C,$ the inequalities
+\begin{align*}
+H(A)+H(C) \leq H(AB)+H(BC) \\
+H(ABC)+H(C) \leq H(AC)+H(BC)
+\end{align*}
+hold.
+
+\emph{Proof:} Define a function $T(\rho ^{ABC})$ of density operators on the system ABC,
+\begin{align*}
+T(\rho ^{ABC}) &\equiv H(A)+H(C)-H(AB)-H(BC) \\
+&= -H(B|A) -H(B|C) .
+\end{align*}
+  From the concavity of the conditional entropy we see that $T(\rho ^{ABC})$ is a convex function of $\rho ^{ABC}$ of density operators on the system $ABC$.
+Let $\rho ^{ABC} = \sum_ip_i|i \rangle \langle i|$ be a spectral decomposition of $\rho ^{ABC}$.
+
+  From the convexity of $T$, $T(\rho ^{ABC}) \leq \sum_ip_iT(|i \rangle \langle i|)$. But $T(|i \rangle \langle i|)=0$ as for a pure state $H(AB)=H(C)$ and $H(BC)=H(A)$. It follows that $T(\rho ^{ABC}) \leq 0$, and thus
+\begin{align*}
+H(A)+H(C)-H(AB)-H(BC) \leq 0,
+\end{align*}
+which is the first inequality we set out to prove.
+
+  To obtain the second inuquality, introduce an auxiliary system $R$ purifying the system $ABC$. Then using the just-proved inuquality we have
+\begin{align*}
+H(R)+H(C) \leq H(RB)+H(BC).
+\end{align*}
+  Since ABCR is a pure state, $H(R)=H(ABC)$ and $H(RB)=H(AC)$, so becomes
+\begin{align*}
+H(ABC)+H(C) \leq H(AC)+H(BC).
+\end{align*}
+Therefore, we finish the proof.
 \end{subsection}
