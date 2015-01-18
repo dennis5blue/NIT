@@ -1,31 +1,31 @@
 \subsection{Strong subadditivity}\label{StrSubAdd}
 For any quantum systems $A, B, C,$ the inequalities
-\begin{align*}
-H(A)+H(C) \leq H(AB)+H(BC) \\
+\begin{align}
+H(A)+H(C) \leq H(AB)+H(BC) \nonumber \\
 H(ABC)+H(C) \leq H(AC)+H(BC)
-\end{align*}
+\end{align}
 hold.
 
 \emph{Proof:} Define a function $T(\rho ^{ABC})$ of density operators on the system ABC,
-\begin{align*}
-T(\rho ^{ABC}) &\equiv H(A)+H(C)-H(AB)-H(BC) \\
-&= -H(B|A) -H(B|C) .
-\end{align*}
-  From the concavity of the conditional entropy we see that $T(\rho ^{ABC})$ is a convex function of $\rho ^{ABC}$ of density operators on the system $ABC$.
+\begin{align}
+&T(\rho ^{ABC}) &\equiv H(A)+H(C)-H(AB)-H(BC) \nonumber \\
+&= -H(B|A) -H(B|C).
+\end{align}
+From the concavity of the conditional entropy we see that $T(\rho ^{ABC})$ is a convex function of $\rho ^{ABC}$ of density operators on the system $ABC$.
 Let $\rho ^{ABC} = \sum_ip_i|i \rangle \langle i|$ be a spectral decomposition of $\rho ^{ABC}$.
 
-  From the convexity of $T$, $T(\rho ^{ABC}) \leq \sum_ip_iT(|i \rangle \langle i|)$. But $T(|i \rangle \langle i|)=0$ as for a pure state $H(AB)=H(C)$ and $H(BC)=H(A)$. It follows that $T(\rho ^{ABC}) \leq 0$, and thus
-\begin{align*}
+From the convexity of $T$, $T(\rho ^{ABC}) \leq \sum_ip_iT(|i \rangle \langle i|)$. But $T(|i \rangle \langle i|)=0$ as for a pure state $H(AB)=H(C)$ and $H(BC)=H(A)$. It follows that $T(\rho ^{ABC}) \leq 0$, and thus
+\begin{align}
 H(A)+H(C)-H(AB)-H(BC) \leq 0,
-\end{align*}
+\end{align}
 which is the first inequality we set out to prove.
 
-  To obtain the second inuquality, introduce an auxiliary system $R$ purifying the system $ABC$. Then using the just-proved inuquality we have
-\begin{align*}
+To obtain the second inuquality, introduce an auxiliary system $R$ purifying the system $ABC$. Then using the just-proved inuquality we have
+\begin{align}
 H(R)+H(C) \leq H(RB)+H(BC).
-\end{align*}
-  Since ABCR is a pure state, $H(R)=H(ABC)$ and $H(RB)=H(AC)$, so becomes
-\begin{align*}
+\end{align}
+Since ABCR is a pure state, $H(R)=H(ABC)$ and $H(RB)=H(AC)$, so becomes
+\begin{align}
 H(ABC)+H(C) \leq H(AC)+H(BC).
-\end{align*}
+\end{align}
 Therefore, we finish the proof.
