@@ -1,87 +1,94 @@
 \subsection{Entropy of Quantum States}
 Recall that the Shannon entropy measures the uncertainty of a classical random variable, we should take the expectation of the self information over all possible realizations:
-\begin{equation*}
+\begin{equation}
 H(X) = -\sum_i p_i \log p_i.
-\end{equation*}
+\end{equation}
 The Von Neumann Entropy (or say quantum entropy) generalize the definition of Shannon entropy to quantum states, whose uncertainty can be measured by its density matrix:
-\begin{equation*}
+\begin{equation}
 H(\rho) \equiv - \text{Tr} \{ \rho \log \rho \} = -\sum_{i} \lambda_i \log \lambda_i,
-\end{equation*}
+\end{equation}
 where the first $\log$ is the logarithm of a matrix (a matrix $B$ is the logarithm of matrix $A$ if $e^B = A$).
 Since the density matrix $\rho$ can be represented by the form of eigenvalues decomposition $\rho = \sum_{i} \lambda_i |e_j\rangle \langle e_j|$; therefore, $\log \rho = \sum_{i} \log \lambda_i |e_j\rangle \langle e_j|$, which means that $\text{Tr} \{ \rho \log \rho \} = \sum_{i} \lambda_i \log \lambda_i$.
-Note that the von Neumann entropy of a density matrix is the Shannon entropy of its eigenvalues. Therefore, the von Neumann entropy shares many properties with the Shannon entropy.
 
-\subsection{Properties of  Quantum Entropy}
-In this section, we discuss several mathematical properties of the quantum entropy: positivity, its minimum value, its maximum value, its invariance under unitaries, and concavity.
+Note that the quantum entropy of a density matrix is the Shannon entropy of its eigenvalues.
+Therefore, it shares many common properties with the Shannon entropy and we will show those properties in the following subsections.
 
-\textbf{Property 1 (Positivity)} The von Neumann entropy $H(\rho)$ is non-negative for any density operator $\rho$:
-\begin{align*}
+\subsection{Properties of Quantum Entropy}
+In this section, we discuss several mathematical properties of the quantum entropy, which includes: positivity, its minimum value, its maximum value, and concavity.
+
+\textbf{Property 1 (Positivity)} The quantum entropy $H(\rho)$ is non-negative for any density operator $\rho$:
+\begin{align}
 H(\rho) \geq 0.
-\end{align*}
-\textit{Proof.} We observe that von Neumann entropy can be expressed as  $-\sum_{i} \lambda_i \log \lambda_i$. Due to the log function always larger than 0, the von Neumann entropy is also larger than 0.
+\end{align}
+\textit{Proof.} We observe that quantum entropy can be expressed as  $-\sum_{i} \lambda_i \log \lambda_i$. Due to the log function is always greater than 0, the quantum entropy is also always greater than 0.
 
 \textbf{Property 2 (Minimum Value)}
-The minimum value of von Neumann entropy is zero, and we can achieve it as the density operator is a pure state; that is, the quantum state is deterministic. \\
+The minimum value of quantum entropy is zero, and we can achieve it as the density operator is in a pure state; that is, the quantum state is deterministic. \\
 \textit{Proof.} The minimum value occurs when a density operator are distributed with all the mass on one value and zero on the others, so that the density operator is rank one and corresponds to a pure state.
 
 \textbf{Property 3 (Maximum Value)}
-The maximum value of von Neumann entropy is $logD$, where $D$ is the dimension of the system. \\
-\textit{Proof.} Similarly to classical case, von Neumann entropy is maximum iff eigen value $\lambda$ is uniformly distributed and it leads entropy to be:
-\begin{align*}
+The maximum value of quantum entropy is $logD$, where $D$ is the dimension of the system. \\
+\textit{Proof.} Similarly to classical case, quantum entropy is maximum if and only if the eigenvalues $\lambda$ is uniformly distributed and it leads entropy to be:
+\begin{align}
 H(\rho) \equiv -\sum_{i} \lambda_i \log \lambda_i = D\frac{1}{D} log(\frac{1}{D})=logD.
-\end{align*}
+\end{align}
 
 \textbf{Property 4 (Concavity)}
-The von Neumann entropy is concave in the density matrix, $H(\rho) \geq \sum_x p_X(x) H(\rho_x)$, where $\rho = \sum_x p_X(x)\rho_x$. \\
+The quantum entropy is concave in the density matrix, $H(\rho) \geq \sum_x p_X(x) H(\rho_x)$, where $\rho = \sum_x p_X(x)\rho_x$. \\
 \textit{Proof.} Define a joint state of $AB$ by:
-\begin{align*}
+\begin{align}
 \rho^{AB} \equiv \sum_i p_i \rho_i \otimes |i\rangle \langle i|.
-\end{align*}
-Note that for theensity matrix $\rho^{AB}$ we have:
-\begin{align*}
-H(A)=H(\sum_i p_i \rho_i) \\
-H(B)=H(\sum_i p_i |i \rangle \langle i|)=H(p_i) \\
-H(A,B)=H(p_i)+\sum_i p_i H(\rho_i). \\
-\end{align*}
-Applying the subadditivity inequality $H(A,B) \leq H(A)+H(B)$we obtain
-\begin{align*}
+\end{align}
+Note that for the density matrix $\rho^{AB}$ we have:
+\begin{align}
+&H(A)=H(\sum_i p_i \rho_i) \nonumber \\
+&H(B)=H(\sum_i p_i |i \rangle \langle i|)=H(p_i) \nonumber \\
+&H(A,B)=H(p_i)+\sum_i p_i H(\rho_i).
+\end{align}
+Note that $H(A,B) \leq H(A)+H(B)$, and hence we can obtain
+\begin{align}
 \sum_i p_i H(\rho_i) \leq H(\sum_i p_i \rho_i),
-\end{align*}
-which is concavity.
+\end{align}
+which finishes the proof of concavity.
 
 \subsection{Other Definitions of Quantum Information}
-The Quantum entropy has some interesting properties. \\
+The Quantum entropy also has some interesting properties.
 Before introducing them, let us give some definitions of Quantum information: \\
 \begin{itemize}
-	\item {\color{red}Joint Quantum Entropy} $H(AB) \equiv -\text{Tr}\{\rho^{AB} \log \rho^{AB}\}$.
-	\item {\color{red}Conditional Quantum Entropy} $H(A|B) = H(AB) - H(B)$.
+	\item {Joint Quantum Entropy} $H(AB) \equiv -\text{Tr}\{\rho^{AB} \log \rho^{AB}\}$.
+	\item {Conditional Quantum Entropy} $H(A|B) = H(AB) - H(B)$.
 	%\item {\color{red}Coherent Information} $I(A \rangle B) \equiv H(B) - H(AB)$.
-	\item {\color{red}Quantum Mutual Information} $I(A;B) \equiv H(A)+H(B)-H(AB)$.
-	\item {\color{red}Conditional Quantum Mutual Information} $I(A;B|C) \equiv H(A|C)+H(B|C)-H(AB|C)$.
+	\item {Quantum Mutual Information} $I(A;B) \equiv H(A)+H(B)-H(AB)$.
+	\item {Conditional Quantum Mutual Information} $I(A;B|C) \equiv H(A|C)+H(B|C)-H(AB|C)$.
 \end{itemize}
-Note that the conditional quantum mutual information is positive:
-\begin{align*}
+Note that the conditional quantum mutual information is positive, that is:
+\begin{align}
 I(A;B|C) \geq 0.
-\end{align*}
-The condition is equivalent to the strong subadditivity inequality in \ref{StrSubAdd}
+\end{align}
+This equation is equivalent to the strong subadditivity inequality which will be proved in Section~\ref{StrSubAdd}.
 
-\subsection{Conditional von Nuemann entropy}
-Unlike the classical conditional entropy, the quantum entropy can be negative. This is true even the von Nuemann entropy of single variable is never negative. \\
-For example:
-Entangled Particals:
-\begin{align*}
-& |\psi_{AB} \rangle = \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle) \\
-& \rho_{AB}= |\psi_{AB} \rangle \langle \psi_{AB}| \\
-& \rho_A=\frac{1}{2}(|0\rangle \langle 0| + |1\rangle \langle 1|) \\
-& H(A)=1=H(B), & &I(A;B)=2,  \\
-& H(AB)=0, & &H(A|B)=-1 
-\end{align*}
-The informational statement is tha we can sometimes be more certain about the joint state of a quantum system than we can be about any one of its individual parts, and this is the reason that conditional  quantum entropy can be negative.
+\subsection{Conditional Quantum Entropy}
+Unlike the classical conditional entropy, the quantum entropy can be negative.
+This is true even the quantum entropy of single variable is never negative.
+For example, in the phenomenon of entanglement, we have the joint state to be a pure state while the marginal states are mixed states.
+That is,
+\begin{align}
+& |\psi_{AB} \rangle = \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle), \nonumber \\
+& \rho_{AB}= |\psi_{AB} \rangle \langle \psi_{AB}|, \nonumber \\
+& \rho_A=\frac{1}{2}(|0\rangle \langle 0| + |1\rangle \langle 1|). \\
+\end{align}
+Therefore, the joint quantum entropy $H(AB) = 0$ while the marginal quantum entropy $H(A) = H(B) = 1$.
+Hence by the definition of conditional quantum entropy, we can have the following results:
+\begin{align}
+&I(A;B)=2, \nonumber \\
+&H(A|B)=-1. 
+\end{align}
+The informational statement is that we can sometimes be more certain about the joint state of a quantum system than we can be about any one of its individual parts, and this is the reason that conditional  quantum entropy can be negative.
 
 \subsection{Coherent Information}
-Negativity of the conditional quantum entropy is so important in quantum information theory that we even have an information quantity and a special notation to donate the negative of the conditional quantum entropy:\\
-We define that the \textit{coherent inforamtion} $I(A\rangle B)_{\rho}$ of a bipartite state $\rho^{AB}$ is as follows:
-\begin{align*}
-I(A\rangle B)_{\rho} \equiv H(B)_{\rho}-H(AB)_{\rho}
-\end{align*}
-We can see that the quantity is the negative of the conditional quantum entropy. It is very important when we discuss the quantum data processing and quantum channel capacity.
+Negativity of the conditional quantum entropy is so important in quantum information theory that we even have an information quantity and a special notation to donate the negative of the conditional quantum entropy.
+We define that the \textit{coherent information} $I(A\rangle B)_{\rho}$ of a bipartite state $\rho^{AB}$ as follows:
+\begin{align}
+I(A\rangle B)_{\rho} \equiv H(B)_{\rho}-H(AB)_{\rho}.
+\end{align}
+We can see that the quantity is the negative of the conditional quantum entropy. It is very important when we further discuss the quantum data processing and the quantum channel capacity.

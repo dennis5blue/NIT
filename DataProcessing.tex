@@ -1,7 +1,15 @@
 \subsection{Data proceesing}
-The quantum data processing inequality is similar in spirit to the classical data processing inequality. Recall the classical data processing case: If $X_1-X_2-X_3$ forms a Markov chain, the inequality $I(X_1;X_2) \geq I(X_1;X_3)$ holds. Now we introduce a quantum case. \\
-Suppose that Alice and Bob share some pure bipartite state $|\phi \rangle ^{AB}$. The coherent information $I(A\rangle B)_{\phi}$ quantifies the quantum correlations present in the state. Bob then processes his system B according to some CPTP map $N_1^{B\to B_1}$ to produce some quantum system $B_1$ and let $\rho ^{AB_1}$ denote the resulting state. A condition similar to the Markov condition holds for the quantum case. The map $N_1^{B\to B_1}$ acts only on one of Bob's systems $-$ it does not act in any way on Alice's system. The quantum data processing inequality states that each step of quantum data processing reduces quantum correlations, in the sense that
-\begin{align*}
+The quantum data processing inequality is similar in spirit to the classical data processing inequality.
+Recall the classical data processing case, if $X_1-X_2-X_3$ forms a Markov chain, the inequality $I(X_1;X_2) \geq I(X_1;X_3)$ holds.
+Now we introduce a quantum case.
+
+Suppose that Alice and Bob share some pure bipartite state $|\phi \rangle ^{AB}$.
+The coherent information $I(A\rangle B)_{\phi}$ quantifies the quantum correlations present in the state.
+Bob then processes his system B according to some CPTP map $N_1^{B\to B_1}$ to produce some quantum system $B_1$ and let $\rho ^{AB_1}$ denote the resulting state.
+A condition similar to the Markov condition holds for the quantum case.
+The map $N_1^{B\to B_1}$ acts only on one of Bob's systems $-$ it does not act in any way on Alice's system.
+The quantum data processing inequality states that each step of quantum data processing reduces quantum correlations, in the sense that
+\begin{align}
 I(A \rangle B)_{\phi} \geq I(A \rangle B_1)_{\rho}
-\end{align*}
-The inequality can be proved in \cite{CtoQ}.
+\end{align}
+The inequality can be proved in Section~\ref{sec:pfDataProcess}.
