@@ -47,6 +47,22 @@ Applying the subadditivity inequality $H(A,B) \leq H(A)+H(B)$we obtain
 \end{align*}
 which is concavity.
 
+\subsection{Other Definitions of Quantum Information}
+The Quantum entropy has some interesting properties. \\
+Before introducing them, let us give some definitions of Quantum information: \\
+\begin{itemize}
+	\item {\color{red}Joint Quantum Entropy} $H(AB) \equiv -\text{Tr}\{\rho^{AB} \log \rho^{AB}\}$.
+	\item {\color{red}Conditional Quantum Entropy} $H(A|B) = H(AB) - H(B)$.
+	%\item {\color{red}Coherent Information} $I(A \rangle B) \equiv H(B) - H(AB)$.
+	\item {\color{red}Quantum Mutual Information} $I(A;B) \equiv H(A)+H(B)-H(AB)$.
+	\item {\color{red}Conditional Quantum Mutual Information} $I(A;B|C) \equiv H(A|C)+H(B|C)-H(AB|C)$.
+\end{itemize}
+Note that the conditional quantum mutual information is positive:
+\begin{align*}
+I(A;B|C) \geq 0.
+\end{align*}
+The condition is equivalent to the strong subadditivity inequality in \ref{StrSubAdd}
+
 \subsection{Conditional von Nuemann entropy}
 Unlike the classical conditional entropy, the quantum entropy can be negative. This is true even the von Nuemann entropy of single variable is never negative. \\
 For example:
@@ -67,35 +83,3 @@ We define that the \textit{coherent inforamtion} $I(A\rangle B)_{\rho}$ of a bip
 I(A\rangle B)_{\rho} \equiv H(B)_{\rho}-H(AB)_{\rho}
 \end{align*}
 We can see that the quantity is the negative of the conditional quantum entropy. It is very important when we discuss the quantum data processing and quantum channel capacity.
-
-\subsection{Strong subadditivity}
-For any quantum systems $A, B, C,$ the inequalities
-\begin{align*}
-H(A)+H(C) \leq H(AB)+H(BC) \\
-H(ABC)+H(C) \leq H(AC)+H(BC)
-\end{align*}
-hold.
-
-\emph{Proof:} Define a function $T(\rho ^{ABC})$ of density operators on the system ABC,
-\begin{align*}
-T(\rho ^{ABC}) &\equiv H(A)+H(C)-H(AB)-H(BC) \\
-&= -H(B|A) -H(B|C) .
-\end{align*}
-  From the concavity of the conditional entropy we see that $T(\rho ^{ABC})$ is a convex function of $\rho ^{ABC}$ of density operators on the system $ABC$.
-Let $\rho ^{ABC} = \sum_ip_i|i \rangle \langle i|$ be a spectral decomposition of $\rho ^{ABC}$.
-
-  From the convexity of $T$, $T(\rho ^{ABC}) \leq \sum_ip_iT(|i \rangle \langle i|)$. But $T(|i \rangle \langle i|)=0$ as for a pure state $H(AB)=H(C)$ and $H(BC)=H(A)$. It follows that $T(\rho ^{ABC}) \leq 0$, and thus
-\begin{align*}
-H(A)+H(C)-H(AB)-H(BC) \leq 0,
-\end{align*}
-which is the first inequality we set out to prove.
-
-  To obtain the second inuquality, introduce an auxiliary system $R$ purifying the system $ABC$. Then using the just-proved inuquality we have
-\begin{align*}
-H(R)+H(C) \leq H(RB)+H(BC).
-\end{align*}
-  Since ABCR is a pure state, $H(R)=H(ABC)$ and $H(RB)=H(AC)$, so becomes
-\begin{align*}
-H(ABC)+H(C) \leq H(AC)+H(BC).
-\end{align*}
-Therefore, we finish the proof.
