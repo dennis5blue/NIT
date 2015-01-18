@@ -1,12 +1,14 @@
 \subsection{Entropy of Quantum States}
-Recall that the Shannon Entropy measures the uncertainty of a classical random variable, we should take the expectation of the self information over all possible realizations:
+Recall that the Shannon entropy measures the uncertainty of a classical random variable, we should take the expectation of the self information over all possible realizations:
 \begin{equation*}
 H(X) = -\sum_i p_i \log p_i.
 \end{equation*}
-The Von Neumann Entropy generalize the definition of Shannon entropy to quantum states, whose uncertainty can be measured by its density matrix:
+The Von Neumann Entropy (or say quantum entropy) generalize the definition of Shannon entropy to quantum states, whose uncertainty can be measured by its density matrix:
 \begin{equation*}
-H(\rho) \equiv - \text{Tr} \{ \rho \log \rho \} = -\sum_{i} \lambda_i \log \lambda_i.
+H(\rho) \equiv - \text{Tr} \{ \rho \log \rho \} = -\sum_{i} \lambda_i \log \lambda_i,
 \end{equation*}
+where the first $\log$ is the logarithm of a matrix.
+Since the density matrix $\rho$ can be represented by the form of eigenvalues decomposition $\rho = \sum_{\lambda_i} \lambda_i |e_j\rangle \langle e_j|$; therefore, $\log \rho = \sum_{\lambda_i} \log \lambda_i |e_j\rangle \langle e_j|$, which means that $\text{Tr} \{ \rho \log \rho \} = \sum_{i} \lambda_i \log \lambda_i$.
 Note that the von Neumann entropy of a density matrix is the Shannon entropy of its eigenvalues. Therefore, the von Neumann entropy shares many properties with the Shannon entropy.
 
 \subsection{Properties of  Quantum Entropy}
