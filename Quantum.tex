@@ -1,4 +1,4 @@
-\begin{subsection}{Entropy of Quantum States}
+\subsection{Entropy of Quantum States}
 Recall that the Shannon Entropy measures the uncertainty of a classical random variable, we should take the expectation of the self information over all possible realizations:
 \begin{equation*}
 H(X) = -\sum_i p_i \log p_i.
@@ -8,9 +8,8 @@ The Von Neumann Entropy generalize the definition of Shannon entropy to quantum 
 H(\rho) \equiv - \text{Tr} \{ \rho \log \rho \} = -\sum_{i} \lambda_i \log \lambda_i.
 \end{equation*}
 Note that the von Neumann entropy of a density matrix is the Shannon entropy of its eigenvalues. Therefore, the von Neumann entropy shares many properties with the Shannon entropy.
-\end{subsection}
 
-\begin{subsection}{Properties of  Quantum Entropy}
+\subsection{Properties of  Quantum Entropy}
 In this section, we discuss several mathematical properties of the quantum entropy: positivity, its minimum value, its maximum value, its invariance under unitaries, and concavity.
 
 \textbf{Property 1 (Positivity)} The von Neumann entropy $H(\rho)$ is non-negative for any density operator $\rho$:
@@ -47,9 +46,8 @@ Applying the subadditivity inequality $H(A,B) \leq H(A)+H(B)$we obtain
 \sum_i p_i H(\rho_i) \leq H(\sum_i p_i \rho_i),
 \end{align*}
 which is concavity.
-\end{subsection}
 
-\begin{subsection}{Conditional von Nuemann entropy}
+\subsection{Conditional von Nuemann entropy}
 Unlike the classical conditional entropy, the quantum entropy can be negative. This is true even the von Nuemann entropy of single variable is never negative. \\
 For example:
 Entangled Particals:
@@ -61,9 +59,8 @@ Entangled Particals:
 & H(AB)=0, & &H(A|B)=-1 
 \end{align*}
 The informational statement is tha we can sometimes be more certain about the joint state of a quantum system than we can be about any one of its individual parts, and this is the reason that conditional  quantum entropy can be negative.
-\end{subsection}
 
-\begin{subsection}{Strong subadditivity}
+\subsection{Strong subadditivity}
 For any quantum systems $A, B, C,$ the inequalities
 \begin{align*}
 H(A)+H(C) \leq H(AB)+H(BC) \\
@@ -94,4 +91,3 @@ H(R)+H(C) \leq H(RB)+H(BC).
 H(ABC)+H(C) \leq H(AC)+H(BC).
 \end{align*}
 Therefore, we finish the proof.
-\end{subsection}
