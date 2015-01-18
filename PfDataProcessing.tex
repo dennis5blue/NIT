@@ -1,0 +1,30 @@
+\subsection{Proof of Data Processing}
+Suppose that Alice and Bob share some pure bipartite state $|\phi \rangle ^{AB}$ and 
+Bob then processes his system B according to some CPTP map $N_1^{B\to B_1}$ to produce some quantum system $B_1$ and let $\rho ^{AB_1}$ denote the resulting state. i.e.
+$\rho_{AB_1} \equiv N_1^{B\to B_1}(\phi ^{AB})$. Then the following quantum data processing inequality applies for coherent information:
+\begin{align*}
+I(A\rangle B)_{\phi} \geq I(A\rangle B_1)_{\rho}
+\end{align*}
+\textit{Proof.} First consider that
+\begin{align*}
+I(A\rangle B)_{\phi} &= H(B)_\phi -H(AB)_\phi \\
+&=H(B)_\phi \\
+&=H(A)_\phi
+\end{align*}
+The first equality follows by definition, the second equality follows because the entropy of a pure state vanishes, and the third equality can be proved by the Schmidt decomposition \cite{CtoQ}. Let $|\psi \rangle ^{AB_1E_1}$ be the output of the isometry $U_{N_1}^{B \to B_1E_1}$:
+\begin{align*}
+|\psi \rangle ^{AB_1E_1} \equiv U_{N_1}^{B \to B_1E_1}|\phi \rangle ^{AB}.
+\end{align*}
+It is also a purification of the state $\rho ^{AB_1}$. Consider that
+\begin{align*}
+I(A \rangle B_1)_\rho &= I(A \rangle B_1)_\psi \\
+&=H(B_1)_\psi - H(AB_1)_\psi \\
+&=H(AE_1)_\psi - H(E_1)_\psi
+\end{align*}
+Note that $H(A)_\phi = H(A)_\psi$ because no processing occurs on system $A$. Since the quantum mutual information is always positive, the following chain of inequalities proves the objective.
+\begin{align*}
+I(A;E_1)_\psi \geq 0 \\
+\rightarrow H(A)_\psi \geq H(AE_1)_\psi - H(E_1)_\psi \\
+\rightarrow I(A\rangle B)_\phi \geq I(A\rangle B_1)_\rho .
+\end{align*}
+The second line applies the definition of quantum mutual information, and the third line applies the results above.
