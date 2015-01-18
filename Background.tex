@@ -1,1 +1,73 @@
-Background Knowledge
+\subsection{Quantum bit}
+Before starting to introduce the quantum information theory, we first explain how to represent a quantum system.
+Differ from the classical world, the most basic unit in the quantum world is a {\it{qubit}}, which can be think as the spin of an electron or the polarization of a photon.
+We start with the simplest quantum system, which is a two-state system, and can be described by a physical qubit.
+One physical qubit can have two possible basis states written as $|0\rangle$ and $|1\rangle$, where $| \cdot \rangle$ is the bra-ket notation commonly used in the quantum world~\cite{BraKet}.
+One easy way to think of the bra-ket notation is to treat it as a column vector, that is:
+\begin{equation}\label{eq:braKet}
+|0\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \quad \quad \quad \quad
+|1\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}.
+\end{equation}
+To proceed, the idea is that we are able to encode a classical bit into a qubit by the following mapping:
+\begin{align}\label{eq:quMap}
+0 \to |0\rangle,\quad \quad \quad \quad &1 \to |1\rangle.
+\end{align}
+By the mapping~\eqref{eq:quMap}, we can think that a qubit is the quantum mechanical version of a classical data bit.
+However, a pure qubit state is a linear superposition of the two quantum states, this means that each qubit can be represented as the linear combination form:
+\begin{equation}\label{eq:qubit}
+|\psi\rangle = \alpha |0\rangle + \beta |1\rangle = 
+\alpha\begin{pmatrix} 1 \\ 0 \end{pmatrix} +
+\beta\begin{pmatrix} 0 \\ 1 \end{pmatrix}
+= \begin{pmatrix} \alpha \\ \beta \end{pmatrix}.
+\end{equation}
+where $\alpha$ and $\beta$ are complex probability amplitudes satisfying the constraint:
+\begin{equation}\label{eq:probAmplitude}
+|\alpha|^2 + |\beta|^2 = 1.
+\end{equation}
+The intuitive idea of constraint~\eqref{eq:probAmplitude} is that after we measure the quantum system $|\psi\rangle$, we will get $|0\rangle$ with probability $|\alpha|^2$ and the probability of getting $|1\rangle$ is $|\beta|^2$.
+Note that the uncertainty while measuring a quantum bit is the fundamental difference of quantum system and classical system, since we can only get $0$ or $1$ in the classical world.
+\subsection{Density Matrix}
+After introducing the concept of qubit, we now focus on the density matrix in this subsection.
+A density matrix is used to describe the statistical state of a quantum system, this is due to the reason that the quantum system is generally in a mixed state (combination of several pure states, where a pure state is like the form in~\eqref{eq:qubit}).
+The density matrix is now defined in the Hilbert space as follows:
+\begin{equation}\label{eq:densityMatrix}
+\rho = \underset{i}{\sum} p_i |\psi_i\rangle \langle \psi_i|,
+\end{equation}
+where $p_i$ is the probability that the system can be found in the state $|\psi_i \rangle$.
+
+We now give an example about how to represent a mixed state quantum system.
+Suppose that the mixed state is in state $|0 \rangle$ with probability $1/2$ and in state $|1 \rangle$ with probability $1/2$.
+Then the density matrix of pure state $|0\rangle$ can be written as:
+\begin{equation}
+  |0 \rangle \langle 0| =
+  \begin{pmatrix}
+  1 \\
+  0
+  \end{pmatrix}
+  \left( 1 \quad 0 \right) = 
+  \begin{pmatrix}
+  1 &0 \\
+  0 &0 
+  \end{pmatrix}.
+\end{equation}
+For the same reason, the density matrix of state $|1\rangle$ is:
+\begin{equation}
+  |1 \rangle \langle 1| =
+  \begin{pmatrix}
+  0 \\
+  1
+  \end{pmatrix}
+  \left( 0 \quad 1 \right) = 
+  \begin{pmatrix}
+  0 &0 \\
+  0 &1 
+  \end{pmatrix}.
+\end{equation}
+Therefore, the overall density matrix is the sum of two pure density matrices, weighted by its probabilities, which can be written as:
+\begin{equation*}
+  \rho = \frac{1}{2}|0 \rangle \langle 0| + \frac{1}{2}|1 \rangle \langle 1| =
+  \begin{pmatrix}
+  1/2 &0 \\
+  0 &1/2 
+  \end{pmatrix}.
+\end{equation*}
